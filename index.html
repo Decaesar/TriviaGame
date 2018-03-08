@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+<style>
+
+body {
+background:url(assets/images/image.png);
+}
+
+#Heading {
+font-size: 36px;
+text-align:center;
+background: aquamarine;
+width: 100%;
+height: 100px;
+}
+
+#questions {
+background: aquamarine;
+width: 100%;
+height: 50px;
+}
+
+#main-body {
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container"> 
+
+  <br>
+  <br>
+ 
+<div class="row">
+
+  <br>
+  <br>
+
+<!-- This is an empty column  -->
+
+<div class="col-md-2"></div>
+
+<div class="col-md-8">
+
+  <div id ="Heading">
+  <h> Totally Trivial Trivia !! </h>    
+  </div>
+
+    <div id="buttons">
+        <button type="button" class="btn btn-primary btn-lg" id="start">Start Game</button>
+    </div>
+
+    <div class="body" id="main-body">  
+        
+        <div id ="questions"></div>
+        <div id ="answers"></div>
+        <div id="answer1"></div> 
+        <div id="answer2"></div> 
+            
+
+    </div>
+
+</div>
+
+<!-- This is an empty column  -->
+
+<div class="col-md-2"></div>
+
+
+</div> 
+    
+
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+var questions = {
+        q1: ["what is the color of the sky", "blue", "black"],
+        q2: ["what is the color of the car", "white","yellow"],
+      };
+
+var questionsArray = [questions.q1, questions.q2];
+var count =0;
+var showQuestions;
+var questionIndex = 0;
+
+$("#start").click(function(){
+    startQuestions();
+});
+
+
+function displayQuestion() {
+  $("#questions").html("<p>" + questionsArray[0][0] + "</p>");
+  $("#answer1").html("<p>" + questionsArray[0][1] + "</p>");
+  $("#answer2").html("<p>" + questionsArray[0][2] + "</p>");
+  showQuestions = setInterval(nextQuestion, 3000);
+  }
+
+function nextQuestion() {
+
+  $("#questions").html("<p>" + "" + "</p>");
+  $("#answer1").html("<p>" + "" + "</p>");
+  $("#answer2").html("<p>" + ""  + "</p>");
+
+  }
+
+function startQuestions () {
+    console.log("startquestion function is called");
+    $("#start").hide();
+    $("#questions").html("");
+    $("#answer1").html("");
+
+showQuestions = setInterval(displayQuestion, 10);
+
+}
+
+// console.log(startQuestions());
+
+</script>
+
+
+</body>
+</html>
