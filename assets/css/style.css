@@ -1,0 +1,25 @@
+
+
+
+body {
+    background:url(../images/image.png);
+    }
+    
+    #Heading {
+    font-size: 36px;
+    text-align:center;
+    background: aquamarine;
+    width: 100%;
+    height: 100px;
+    }
+    
+    #questions {
+    background: aquamarine;
+    width: 100%;
+    height: 50px;
+    }
+    
+    #main-body {
+    text-align: center;
+    }
+    
